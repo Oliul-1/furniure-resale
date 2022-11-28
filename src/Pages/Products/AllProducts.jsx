@@ -27,13 +27,9 @@ const AllProducts = () => {
                     }
                 </div>
                 <div className="col-span-1">
-
-                    
                         <ul className="menu p-4 w-80 bg-slate-200 text-base-content">
                             {data.map(da => <li><button>{da.name}</button></li>)}
                         </ul>
-                    
-
                 </div>
             </div>
         </div>

@@ -25,11 +25,11 @@ const Navbar = () => {
         {
             user?.uid ?
                 <>
-
+                    <li><Link to='/dashboard'>Dashboard</Link></li>
                 </>
                 :
                 <>
-                
+
                 </>
         }
 
@@ -49,7 +49,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                <Link to='/' className="btn btn-ghost text-violet-400 normal-case text-xl">Furniture Mala</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -60,13 +60,13 @@ const Navbar = () => {
             </div>
             {
                 user ?
-                <div className="navbar-end">
-                    <button onClick={LogOut} className="btn">Log Out</button>
-                </div>
-                :
-                <div className="navbar-end">
-                    <Link to='/login'><button className="btn">Login</button></Link>
-                </div>
+                    <div className="navbar-end">
+                        <button onClick={LogOut} className="btn btn-primary">Log Out</button>
+                    </div>
+                    :
+                    <div className="navbar-end">
+                        <Link to='/login'><button className="btn btn-primary">Login</button></Link>
+                    </div>
             }
         </div>
     );

@@ -12,8 +12,8 @@ const ProductCarts = ({ product }) => {
                     <h2 className="card-title">{name}</h2>
                     <div className='flex justify-between'>
                         <p>{Location}</p>
-                        <p>{resale_price}</p>
-                        <p>{original_price}</p>
+                        <p>{resale_price} TK</p>
+                        <p>{original_price} TK</p>
                     </div>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary">Order Now</button>

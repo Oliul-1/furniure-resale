@@ -4,22 +4,21 @@ import ProductCarts from './ProductCarts';
 
 const AllProducts = () => {
     const data = useLoaderData();
-    console.log(data);
-    const [products, setProducts] = useState()
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:5000/products")
-            .then(res => setProducts(res))
-            .then(err => (console.log(err)))
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setProducts(data)
+            })
     }, [])
 
     return (
         <div>
-            <p>{data.length}</p>
-
-            <div className="drawer drawer-mobile">
-                <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+            <div className="grid grid-cols-3 gap-1">
+                <div className="col-span-2 grid grid-col-1 md:grid-cols-2 gap-2">
                     {
                         products.map(product => <ProductCarts
                             key={product._id}
@@ -27,13 +26,13 @@ const AllProducts = () => {
                         ></ProductCarts>)
                     }
                 </div>
-                <div className="drawer-side">
-                    <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-slate-200 text-base-content">
+                <div className="col-span-1">
 
-                        {data.map(da => <li><button>{da.name}</button></li>)}
-
-                    </ul>
+                    
+                        <ul className="menu p-4 w-80 bg-slate-200 text-base-content">
+                            {data.map(da => <li><button>{da.name}</button></li>)}
+                        </ul>
+                    
 
                 </div>
             </div>

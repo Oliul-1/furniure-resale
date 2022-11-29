@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/Products',
                 element: <AllProducts></AllProducts>,
-                loader: () => fetch('http://localhost:5000/category')
+                loader: () => fetch('https://furniture-mala.vercel.app/category')
             },
             {
                 path: '/blog',
